@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "p2/zhJZrab9DxsccIFqeQEjagvnE7HYQlFvztSNM1mZpbsSNNtF9riPICzuVjeBkGkcEfQ139GFR6A+NptlIiw==",
+  "dgSpecHash": "uEcK2loJZgeRGxl6tqqgfK+48zH474PinzhlMg+se2uSgRLlPHay91uzM7Ajz8oj0wVmJ8e4qeOZSZkAVNVOEA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rhys Grabany\\source\\repos\\LibraryManagement\\LibraryManagementLibrary\\LibraryManagementLibrary.csproj",
+  "projectFilePath": "D:\\VisualStudioProjects\\LibraryManagement\\LibraryManagementLibrary\\LibraryManagementLibrary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rhys Grabany\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Rhys Grabany\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

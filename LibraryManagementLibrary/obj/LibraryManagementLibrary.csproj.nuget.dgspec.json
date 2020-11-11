@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Rhys Grabany\\source\\repos\\LibraryManagement\\LibraryManagementLibrary\\LibraryManagementLibrary.csproj": {}
+    "D:\\VisualStudioProjects\\LibraryManagement\\LibraryManagementLibrary\\LibraryManagementLibrary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Rhys Grabany\\source\\repos\\LibraryManagement\\LibraryManagementLibrary\\LibraryManagementLibrary.csproj": {
+    "D:\\VisualStudioProjects\\LibraryManagement\\LibraryManagementLibrary\\LibraryManagementLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rhys Grabany\\source\\repos\\LibraryManagement\\LibraryManagementLibrary\\LibraryManagementLibrary.csproj",
+        "projectUniqueName": "D:\\VisualStudioProjects\\LibraryManagement\\LibraryManagementLibrary\\LibraryManagementLibrary.csproj",
         "projectName": "LibraryManagementLibrary",
-        "projectPath": "C:\\Users\\Rhys Grabany\\source\\repos\\LibraryManagement\\LibraryManagementLibrary\\LibraryManagementLibrary.csproj",
+        "projectPath": "D:\\VisualStudioProjects\\LibraryManagement\\LibraryManagementLibrary\\LibraryManagementLibrary.csproj",
         "packagesPath": "C:\\Users\\Rhys Grabany\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rhys Grabany\\source\\repos\\LibraryManagement\\LibraryManagementLibrary\\obj\\",
+        "outputPath": "D:\\VisualStudioProjects\\LibraryManagement\\LibraryManagementLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

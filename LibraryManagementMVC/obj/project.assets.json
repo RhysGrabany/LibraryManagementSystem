@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rhys Grabany\\source\\repos\\LibraryManagement\\LibraryManagementMVC\\LibraryManagementMVC.csproj",
+      "projectUniqueName": "D:\\VisualStudioProjects\\LibraryManagement\\LibraryManagementMVC\\LibraryManagementMVC.csproj",
       "projectName": "LibraryManagementMVC",
-      "projectPath": "C:\\Users\\Rhys Grabany\\source\\repos\\LibraryManagement\\LibraryManagementMVC\\LibraryManagementMVC.csproj",
+      "projectPath": "D:\\VisualStudioProjects\\LibraryManagement\\LibraryManagementMVC\\LibraryManagementMVC.csproj",
       "packagesPath": "C:\\Users\\Rhys Grabany\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rhys Grabany\\source\\repos\\LibraryManagement\\LibraryManagementMVC\\obj\\",
+      "outputPath": "D:\\VisualStudioProjects\\LibraryManagement\\LibraryManagementMVC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

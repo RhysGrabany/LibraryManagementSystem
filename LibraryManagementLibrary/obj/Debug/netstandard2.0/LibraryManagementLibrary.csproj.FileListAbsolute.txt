@@ -1,0 +1,5 @@
+C:\Users\Rhys Grabany\source\repos\LibraryManagement\LibraryManagementLibrary\bin\Debug\netstandard2.0\LibraryManagementLibrary.deps.json
+C:\Users\Rhys Grabany\source\repos\LibraryManagement\LibraryManagementLibrary\bin\Debug\netstandard2.0\LibraryManagementLibrary.dll
+C:\Users\Rhys Grabany\source\repos\LibraryManagement\LibraryManagementLibrary\obj\Debug\netstandard2.0\LibraryManagementLibrary.csprojAssemblyReference.cache
+C:\Users\Rhys Grabany\source\repos\LibraryManagement\LibraryManagementLibrary\obj\Debug\netstandard2.0\LibraryManagementLibrary.AssemblyInfoInputs.cache
+C:\Users\Rhys Grabany\source\repos\LibraryManagement\LibraryManagementLibrary\obj\Debug\netstandard2.0\LibraryManagementLibrary.AssemblyInfo.cs
