@@ -16,7 +16,7 @@ namespace LibraryManagementLibrary.Models
         public Person PersonID { get; set; }
 
         [Required(ErrorMessage = "{0} is required")]
-        [MaxLength(100)]
+        [MaxLength(100), MinLength(1)]
         public string EmailAddress { get; set; }
     }
 }

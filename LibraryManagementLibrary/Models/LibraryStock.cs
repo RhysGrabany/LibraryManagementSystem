@@ -19,7 +19,7 @@ namespace LibraryManagementLibrary.Models
         public Book BookID { get; set; }
 
         [Required(ErrorMessage = "{0} is required")]
-        [MaxLength(2)]
+        [MaxLength(2), MinLength(1)]
         public int Stock { get; set; }
     }
 }

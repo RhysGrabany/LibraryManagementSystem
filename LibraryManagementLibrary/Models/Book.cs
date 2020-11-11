@@ -12,11 +12,11 @@ namespace LibraryManagementLibrary.Models
         public int BookID { get; set; }
 
         [Required(ErrorMessage = "{0} is required")]
-        [MaxLength(50)]
+        [MaxLength(50), MinLength(5)]
         public string Title { get; set; }
 
         [Required(ErrorMessage = "{0} is required")]
-        [MaxLength(80)]
+        [MaxLength(80), MinLength(10)]
         public string Author { get; set; }
 
         [Required(ErrorMessage = "{0} is required")]

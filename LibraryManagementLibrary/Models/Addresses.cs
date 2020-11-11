@@ -15,15 +15,15 @@ namespace LibraryManagementLibrary.Models
         public List<Person> PersonID { get; set; } = new List<Person>();
 
         [Required(ErrorMessage = "{0} is required")]
-        [MaxLength(50)]
+        [MaxLength(50), MinLength(5)]
         public string Town { get; set; }
 
         [Required(ErrorMessage = "{0} is required")]
-        [MaxLength(3)]
+        [MaxLength(3), MinLength(1)]
         public int Number { get; set; }
 
         [Required(ErrorMessage = "{0} is required")]
-        [MaxLength(80)]
+        [MaxLength(80), MinLength(5)]
         public string Address { get; set; }
 
         [Required(ErrorMessage = "{0} is required")]

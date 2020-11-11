@@ -13,11 +13,11 @@ namespace LibraryManagementLibrary.Models
         public int PersonID { get; set; }
 
         [Required(ErrorMessage = "{0} is required")]
-        [MaxLength(50)]
+        [MaxLength(50), MinLength(3)]
         public string FirstName { get; set; }
 
         [Required(ErrorMessage = "{0} is required")]
-        [MaxLength(50)]
+        [MaxLength(50), MinLength(3)]
         public string LastName { get; set; }
 
         [Required(ErrorMessage = "{0} is required")]
