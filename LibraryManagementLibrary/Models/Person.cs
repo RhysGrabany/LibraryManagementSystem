@@ -8,7 +8,7 @@ namespace LibraryManagementLibrary.Models
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public List<EmailAddresses> EmailAddress { get; set; } = new List<EmailAddresses>();
+        public EmailAddresses EmailAddress { get; set; } 
         public List<Addresses> Addresses { get; set; } = new List<Addresses>();
         public List<CheckedBooks> CheckedBooks { get; set; } = new List<CheckedBooks>();
     }
