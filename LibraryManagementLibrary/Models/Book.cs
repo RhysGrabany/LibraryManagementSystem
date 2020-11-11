@@ -7,6 +7,10 @@ namespace LibraryManagementLibrary.Models
 {
     public class Book
     {
+        [Key]
+        [Required]
+        public int BookID { get; set; }
+
         [Required(ErrorMessage = "{0} is required")]
         [MaxLength(50)]
         public string Title { get; set; }

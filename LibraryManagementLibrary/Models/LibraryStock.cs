@@ -7,6 +7,11 @@ namespace LibraryManagementLibrary.Models
 {
     public class LibraryStock
     {
+
+        [Key]
+        [Required]
+        public int LibraryStockID { get; set; }
+
         [Required(ErrorMessage = "{0} is required")]
         public Library LibraryID { get; set; }
 

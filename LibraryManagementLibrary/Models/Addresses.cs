@@ -7,6 +7,10 @@ namespace LibraryManagementLibrary.Models
 {
     public class Addresses
     {
+        [Key]
+        [Required]
+        public int AddressesID { get; set; }
+
         [Required(ErrorMessage = "{0} is required")]
         public List<Person> PersonID { get; set; } = new List<Person>();
 

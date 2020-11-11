@@ -7,6 +7,11 @@ namespace LibraryManagementLibrary.Models
 {
     public class EmailAddresses
     {
+
+        [Key]
+        [Required]
+        public int EmailAddressesID { get; set; }
+
         [Required(ErrorMessage = "{0} is required")]
         public Person PersonID { get; set; }
 

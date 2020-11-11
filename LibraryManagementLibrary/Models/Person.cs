@@ -7,6 +7,11 @@ namespace LibraryManagementLibrary.Models
 {
     public class Person
     {
+
+        [Key]
+        [Required]
+        public int PersonID { get; set; }
+
         [Required(ErrorMessage = "{0} is required")]
         [MaxLength(50)]
         public string FirstName { get; set; }
