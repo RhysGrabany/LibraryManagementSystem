@@ -3,3 +3,8 @@ C:\Users\Rhys Grabany\source\repos\LibraryManagement\LibraryManagementLibrary\bi
 C:\Users\Rhys Grabany\source\repos\LibraryManagement\LibraryManagementLibrary\obj\Debug\netstandard2.0\LibraryManagementLibrary.csprojAssemblyReference.cache
 C:\Users\Rhys Grabany\source\repos\LibraryManagement\LibraryManagementLibrary\obj\Debug\netstandard2.0\LibraryManagementLibrary.AssemblyInfoInputs.cache
 C:\Users\Rhys Grabany\source\repos\LibraryManagement\LibraryManagementLibrary\obj\Debug\netstandard2.0\LibraryManagementLibrary.AssemblyInfo.cs
+D:\VisualStudioProjects\LibraryManagement\LibraryManagementLibrary\bin\Debug\netstandard2.0\LibraryManagementLibrary.deps.json
+D:\VisualStudioProjects\LibraryManagement\LibraryManagementLibrary\bin\Debug\netstandard2.0\LibraryManagementLibrary.dll
+D:\VisualStudioProjects\LibraryManagement\LibraryManagementLibrary\obj\Debug\netstandard2.0\LibraryManagementLibrary.csprojAssemblyReference.cache
+D:\VisualStudioProjects\LibraryManagement\LibraryManagementLibrary\obj\Debug\netstandard2.0\LibraryManagementLibrary.AssemblyInfoInputs.cache
+D:\VisualStudioProjects\LibraryManagement\LibraryManagementLibrary\obj\Debug\netstandard2.0\LibraryManagementLibrary.AssemblyInfo.cs
