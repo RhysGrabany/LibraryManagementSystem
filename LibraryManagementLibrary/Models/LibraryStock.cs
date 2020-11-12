@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace LibraryManagementLibrary.Models
@@ -32,14 +33,16 @@ namespace LibraryManagementLibrary.Models
         /// <summary>
         /// FK from the Library table
         /// </summary>
+        [ForeignKey("LibraryID")]
         [Required(ErrorMessage = "{0} is required")]
-        public Library LibraryID { get; set; }
+        public Library Library { get; set; }
 
         /// <summary>
         /// FK from the Book table
         /// </summary>
+        [ForeignKey("BookID")]
         [Required(ErrorMessage = "{0} is required")]
-        public Book BookID { get; set; }
+        public Book Book { get; set; }
 
         /// <summary>
         /// The stock of the book being stored

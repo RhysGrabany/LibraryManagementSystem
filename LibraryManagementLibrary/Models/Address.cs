@@ -17,11 +17,11 @@ namespace LibraryManagementLibrary.Models
     /// |    | Persons     |
     /// |    | Town        |
     /// |    | Number      |
-    /// |    | Address     |
+    /// |    | AddressLine |
     /// |    | Postcode    |
     /// ++++++++++++++++++++
     /// </summary>
-    public class Addresses
+    public class Address
     {
         /// <summary>
         /// Primary Key for Adresses Table
@@ -59,7 +59,7 @@ namespace LibraryManagementLibrary.Models
         /// </summary>
         [Required(ErrorMessage = "{0} is required")]
         [MaxLength(80), MinLength(5)]
-        public string Address { get; set; }
+        public string AddressLine { get; set; }
 
         /// <summary>
         /// Postcode of the address

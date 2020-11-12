@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
 using System.Text;
 
@@ -21,7 +22,7 @@ namespace LibraryManagementLibrary.Models
     /// |    | ReturnDate      |
     /// ++++++++++++++++++++++++
     /// </summary>
-    public class CheckedBooks
+    public class CheckedBook
     {
         /// <summary>
         /// PK of the CheckedBooks Table
@@ -33,14 +34,16 @@ namespace LibraryManagementLibrary.Models
         /// <summary>
         /// FK from the Person Table
         /// </summary>
+        [ForeignKey("PersonID")]
         [Required(ErrorMessage = "{0} is required")]
-        public Person PersonID { get; set; }
+        public Person Person { get; set; }
 
         /// <summary>
         /// FK from the Book Table
         /// </summary>
+        [ForeignKey("BookID")]
         [Required(ErrorMessage = "{0} is required")]
-        public Book BookID { get; set; }
+        public Book Book { get; set; }
 
         /// <summary>
         /// The return date for the book

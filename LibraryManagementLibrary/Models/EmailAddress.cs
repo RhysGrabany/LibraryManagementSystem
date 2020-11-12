@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace LibraryManagementLibrary.Models
@@ -15,10 +16,10 @@ namespace LibraryManagementLibrary.Models
     /// |-----------------------|
     /// | PK | CheckedBooksID   |
     /// | FK | PersonID         |
-    /// |    | EmailAddress     |
+    /// |    | Email            |
     /// +++++++++++++++++++++++++
     /// </summary>
-    public class EmailAddresses
+    public class EmailAddress
     {
         /// <summary>
         /// PK of the EmailAddress table
@@ -30,8 +31,9 @@ namespace LibraryManagementLibrary.Models
         /// <summary>
         /// FK from the Person Table
         /// </summary>
+        [ForeignKey("PersonID")]
         [Required(ErrorMessage = "{0} is required")]
-        public Person PersonID { get; set; }
+        public Person Person { get; set; }
 
         /// <summary>
         /// The email address of the person
@@ -39,6 +41,6 @@ namespace LibraryManagementLibrary.Models
         /// </summary>
         [Required(ErrorMessage = "{0} is required")]
         [MaxLength(100)]
-        public string EmailAddress { get; set; }
+        public string Email { get; set; }
     }
 }

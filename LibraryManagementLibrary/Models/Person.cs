@@ -53,20 +53,20 @@ namespace LibraryManagementLibrary.Models
         /// One-To-One Relationship with EmailAddress table
         /// </summary>
         [Required(ErrorMessage = "{0} is required")]
-        public EmailAddresses EmailAddress { get; set; }
+        public EmailAddress EmailAddress { get; set; }
 
         /// <summary>
         /// Address of the Person
         /// Many-To-Many Relationship with Addresses table
         /// </summary>
         [Required(ErrorMessage = "{0} is required")]
-        public List<Addresses> Addresses { get; set; } = new List<Addresses>();
+        public List<Address> Addresses { get; set; } = new List<Address>();
 
         /// <summary>
         /// CheckedBooks of the Person
         /// One-To-Many Relationship with CheckedBooks table
         /// </summary>
         [Required(ErrorMessage = "{0} is required")]
-        public List<CheckedBooks> CheckedBooks { get; set; } = new List<CheckedBooks>();
+        public List<CheckedBook> CheckedBooks { get; set; } = new List<CheckedBook>();
     }
 }
