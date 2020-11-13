@@ -28,6 +28,7 @@ namespace LibraryManagementLibrary.Models
         /// <summary>
         /// PK of the Person table
         /// </summary>
+        [Display(Name = "Person ID")]
         [Key]
         [Required]
         public int PersonID { get; set; }
@@ -36,6 +37,7 @@ namespace LibraryManagementLibrary.Models
         /// FirstName of the Person
         /// MaxLength(50), MinLength(3)
         /// </summary>
+        [Display(Name = "First Name")]
         [Required(ErrorMessage = "{0} is required")]
         [MaxLength(50), MinLength(3)]
         public string FirstName { get; set; }
@@ -44,6 +46,7 @@ namespace LibraryManagementLibrary.Models
         /// LastName of the Person
         /// MaxLength(50), MinLength(3)
         /// </summary>
+        [Display(Name = "Last Name")]
         [Required(ErrorMessage = "{0} is required")]
         [MaxLength(50), MinLength(3)]
         public string LastName { get; set; }
@@ -52,6 +55,7 @@ namespace LibraryManagementLibrary.Models
         /// EmailAddress of the Person
         /// One-To-One Relationship with EmailAddress table
         /// </summary>
+        [Display(Name = "Email Address")]
         [Required(ErrorMessage = "{0} is required")]
         public EmailAddress EmailAddress { get; set; }
 
@@ -59,6 +63,7 @@ namespace LibraryManagementLibrary.Models
         /// Address of the Person
         /// Many-To-Many Relationship with Addresses table
         /// </summary>
+        [Display(Name = "Address")]
         [Required(ErrorMessage = "{0} is required")]
         public List<Address> Addresses { get; set; } = new List<Address>();
 
@@ -66,7 +71,7 @@ namespace LibraryManagementLibrary.Models
         /// CheckedBooks of the Person
         /// One-To-Many Relationship with CheckedBooks table
         /// </summary>
-        [Required(ErrorMessage = "{0} is required")]
+        [Display(Name = "Checked Books")]
         public List<CheckedBook> CheckedBooks { get; set; } = new List<CheckedBook>();
     }
 }
