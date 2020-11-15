@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace LibraryManagementMVC.Models
 {
-    public class AddressModel : Address
+    public class CustomerSignUpModel
     {
+        public Person Person { get; set; }
+        public EmailAddress EmailAddress { get; set; }
+        public Address Address { get; set; }
     }
 }

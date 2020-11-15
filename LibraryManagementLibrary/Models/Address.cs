@@ -50,7 +50,7 @@ namespace LibraryManagementLibrary.Models
         /// MaxLength(3), MinLength(1) Required
         /// </summary>
         [Required(ErrorMessage = "{0} is required")]
-        [MaxLength(3), MinLength(1)]
+        //[RegularExpression("([1-9][0-9]*)", ErrorMessage = "Number must be a natural number")]
         public int Number { get; set; }
         
         /// <summary>

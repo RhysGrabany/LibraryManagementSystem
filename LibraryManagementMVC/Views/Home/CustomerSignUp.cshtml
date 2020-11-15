@@ -1,0 +1,76 @@
+﻿@model CustomerSignUpModel
+
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+@using (Html.BeginForm("CustomerSignUp", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>ProductTypeViewModel</h4>
+    <hr />
+    @Html.ValidationSummary(true)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Person.FirstName, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Person.FirstName)
+            @Html.ValidationMessageFor(model => model.Person.FirstName)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Person.LastName, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Person.LastName)
+            @Html.ValidationMessageFor(model => model.Person.LastName)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.EmailAddress.Email, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.EmailAddress.Email)
+            @Html.ValidationMessageFor(model => model.EmailAddress.Email)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Address.Town, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Address.Town)
+            @Html.ValidationMessageFor(model => model.Address.Town)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Address.Number, new { @type = "number", @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Address.Number)
+            @Html.ValidationMessageFor(model => model.Address.Number)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Address.AddressLine, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Address.AddressLine)
+            @Html.ValidationMessageFor(model => model.Address.AddressLine)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Address.Postcode, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Address.Postcode)
+            @Html.ValidationMessageFor(model => model.Address.Postcode)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Submit" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

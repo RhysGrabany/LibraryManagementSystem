@@ -8,6 +8,7 @@ namespace LibraryManagementLibrary.DataAccess
 {
     public class LibraryContext : DbContext
     {
+   
         public LibraryContext(DbContextOptions options) : base(options) { }
 
         // Library Info with Stock and Books
