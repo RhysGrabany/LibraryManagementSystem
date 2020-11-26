@@ -46,18 +46,42 @@ namespace LibraryManagementMVC.Controllers
         [HttpPost]
         public ActionResult CustomerSignUp(CustomerSignUpModel vm)
         {
-            Person person = vm.Person;
+            var person = vm.Person;
             var address = vm.Address;
+            person.EmailAddress = vm.EmailAddress;
+
 
             bool isPersonSaved = _sql.IsPersonSaved(person);
             bool isAddressSaved = _sql.IsAddressSaved(address);
 
 
-            if ()
+            if (isPersonSaved || isAddressSaved)
             {
-                return View(vm);
-            }
 
+                if (isPersonSaved)
+                {
+                    if (!isAddressSaved)
+                        _sql.AddNewAddressToPerson(person, address);
+
+                    if (isAddressSaved)
+                    {
+                        bool isPersonAddressSaved = _sql.IsPersonAddressSaved(person, address);
+
+                        if (!isPersonAddressSaved)
+                            _sql.AddExistingPersonToExistingAddress(person, address);
+                        return View(vm);
+                    }
+                }
+                else
+                {
+                    if (isAddressSaved)
+                        _sql.AddNewPersonToAddress(person, address);
+                }
+            }
+            else
+            {
+                _sql.AddNewPersonInformation(person, address);
+            }
 
 
             return View(vm);
