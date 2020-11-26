@@ -1,4 +1,5 @@
 ﻿using LibraryManagementLibrary.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -108,6 +109,9 @@ namespace LibraryManagementLibrary.DataAccess
                 .First();
         }
 
+
+        #region Person/Address Checks
+
         public bool IsPersonSaved(Person person)
         {
             return _db.People
@@ -125,13 +129,20 @@ namespace LibraryManagementLibrary.DataAccess
 
         public bool IsPersonAddressSaved(Person person, Address address)
         {
-           return _db.People
-                .Where(x => x.FirstName == person.FirstName)
-                .Where(x => x.LastName == person.LastName)
-                .First().Addresses
-                .ToList()
-                .Contains(address);
+
+            return _db.People
+                 .Where(p => p.FirstName == person.FirstName)
+                 .Where(p => p.LastName == person.LastName)
+                 .Include(i => i.Addresses)
+                 .First()
+                 .Addresses
+                 .Where(a => a.Postcode == address.Postcode)
+                 .Where(a => a.Number == address.Number)
+                 .ToList()
+                 .Count() > 0;
+
         }
+        #endregion
 
 
         #endregion
