@@ -30,6 +30,7 @@ namespace LibraryManagementMVC
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
             });
             services.AddControllersWithViews();
+            services.AddScoped<IDataConnection,SqlConnector>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

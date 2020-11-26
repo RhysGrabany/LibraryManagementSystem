@@ -50,7 +50,7 @@ namespace LibraryManagementLibrary.Models
         /// MaxLength(3), MinLength(1) Required
         /// </summary>
         [Required(ErrorMessage = "{0} is required")]
-        //[RegularExpression("([1-9][0-9]*)", ErrorMessage = "Number must be a natural number")]
+        [RegularExpression("([1-9][0-9]*)", ErrorMessage = "Number must be a natural number")]
         public int Number { get; set; }
         
         /// <summary>
@@ -65,8 +65,10 @@ namespace LibraryManagementLibrary.Models
         /// Postcode of the address
         /// MaxLength(7), MinLength(7) Required -- MUST BE 7 CHARACTERS (LLNNNLL formatting) 
         /// </summary>
-        [Required(ErrorMessage = "{0} is required")]
+        [Required]
         [MaxLength(7), MinLength(7)]
+        [RegularExpression(@"/^[a-zA-Z]{2}[0-9]{2}[0-9][a-zA-Z]{2}$/", ErrorMessage = "Postcode must match LLNNNLL format")]
+
         public string Postcode { get; set; }
     }
 }

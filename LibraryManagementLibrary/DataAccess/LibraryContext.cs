@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace LibraryManagementLibrary.DataAccess
@@ -20,10 +21,18 @@ namespace LibraryManagementLibrary.DataAccess
 
         //Person Info with Addresses, Email Addresses, and Checked Books
         #region People Info
+        
         public DbSet<Person> People { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<EmailAddress> EmailAddresses { get; set; }
         public DbSet<CheckedBook> CheckedBooks { get; set; }
+        
         #endregion
+
+
+
+        
+
+
     }
 }

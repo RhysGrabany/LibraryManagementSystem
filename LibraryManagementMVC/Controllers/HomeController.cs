@@ -14,12 +14,12 @@ namespace LibraryManagementMVC.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly LibraryContext _db;
+        private readonly IDataConnection _sql;
 
-        public HomeController(ILogger<HomeController> logger, LibraryContext db)
+        public HomeController(ILogger<HomeController> logger, IDataConnection sql)
         {
             _logger = logger;
-            _db = db;
+            _sql = sql;
         }
 
         public IActionResult Index()
@@ -47,22 +47,17 @@ namespace LibraryManagementMVC.Controllers
         public ActionResult CustomerSignUp(CustomerSignUpModel vm)
         {
             Person person = vm.Person;
-            List<Address> address = new List<Address>();
-            address.Add(vm.Address);
+            var address = vm.Address;
 
-            person.EmailAddress = vm.EmailAddress;
+            bool isPersonSaved = _sql.IsPersonSaved(person);
+            bool isAddressSaved = _sql.IsAddressSaved(address);
 
 
-            foreach (var ad in address)
+            if ()
             {
-                person.Addresses.Add(ad);
+                return View(vm);
             }
 
-            using (var db = _db)
-            {
-                db.People.Add(person);
-                db.SaveChanges();
-            }
 
 
             return View(vm);

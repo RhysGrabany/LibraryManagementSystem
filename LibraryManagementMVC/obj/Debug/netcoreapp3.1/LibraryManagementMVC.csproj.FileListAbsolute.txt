@@ -1,6 +1,5 @@
 D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\bin\Debug\netcoreapp3.1\appsettings.json
-D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\bin\Debug\netcoreapp3.1\LibraryManagementMVC.exe
 D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\obj\Debug\netcoreapp3.1\LibraryManagementMVC.csprojAssemblyReference.cache
 D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\obj\Debug\netcoreapp3.1\LibraryManagementMVC.AssemblyInfoInputs.cache
@@ -152,3 +151,4 @@ D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\bin\Debug\netcore
 D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\obj\Debug\netcoreapp3.1\LibraryManagementMVC.csproj.CoreCompileInputs.cache
 D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\obj\Debug\netcoreapp3.1\LibraryManagementMVC.MvcApplicationPartsAssemblyInfo.cache
 D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\CustomerSignUp.cshtml.g.cs
+D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\obj\Debug\netcoreapp3.1\scopedcss\bundle\LibraryManagementMVC.styles.css
