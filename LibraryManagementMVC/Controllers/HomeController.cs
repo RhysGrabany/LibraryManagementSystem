@@ -64,7 +64,7 @@ namespace LibraryManagementMVC.Controllers
                 {
                     if (!isAddressSaved)
                         // The person is saved, but no the address, so this adds the new address to the person
-                        _sql.AddNewAddressToPerson(person, address);
+                        _sql.AddNewAddressToExistingPerson(person, address);
 
                     if (isAddressSaved)
                     {
@@ -81,7 +81,7 @@ namespace LibraryManagementMVC.Controllers
                 {
                     if (isAddressSaved)
                         // The person is not saved but the address is, this adds the new person to the address
-                        _sql.AddNewPersonToAddress(person, address);
+                        _sql.AddNewPersonToExistingAddress(person, address);
                 }
             }
             else
@@ -92,6 +92,13 @@ namespace LibraryManagementMVC.Controllers
 
             return View(vm);
         }
+
+
+        public IActionResult SearchPersons()
+        {
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

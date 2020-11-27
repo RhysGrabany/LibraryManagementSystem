@@ -152,3 +152,4 @@ D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\obj\Debug\netcore
 D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\obj\Debug\netcoreapp3.1\LibraryManagementMVC.dll
 D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\obj\Debug\netcoreapp3.1\LibraryManagementMVC.pdb
 D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\obj\Debug\netcoreapp3.1\LibraryManagementMVC.genruntimeconfig.cache
+D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\SearchPersons.cshtml.g.cs

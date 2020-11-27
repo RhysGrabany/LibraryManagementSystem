@@ -4,6 +4,7 @@
 @using (Html.BeginForm("CustomerSignUp", "Home", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
+    ViewData["Title"] = "Customer Sign Up";
 
 <div class="form-horizontal">
     <h4>ProductTypeViewModel</h4>

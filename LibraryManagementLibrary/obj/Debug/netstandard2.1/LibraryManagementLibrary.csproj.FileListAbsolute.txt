@@ -6,3 +6,4 @@ D:\VisualStudioProjects\LibraryManagement\LibraryManagementLibrary\obj\Debug\net
 D:\VisualStudioProjects\LibraryManagement\LibraryManagementLibrary\obj\Debug\netstandard2.1\LibraryManagementLibrary.csproj.CoreCompileInputs.cache
 D:\VisualStudioProjects\LibraryManagement\LibraryManagementLibrary\obj\Debug\netstandard2.1\LibraryManagementLibrary.dll
 D:\VisualStudioProjects\LibraryManagement\LibraryManagementLibrary\obj\Debug\netstandard2.1\LibraryManagementLibrary.pdb
+D:\VisualStudioProjects\LibraryManagement\LibraryManagementLibrary\obj\Debug\netstandard2.1\LibraryManagementLibrary.csprojAssemblyReference.cache
