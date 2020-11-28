@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30330.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagementMVC", "LibraryManagementMVC\LibraryManagementMVC.csproj", "{D90E438D-E454-46F3-BEFE-D87A3D87E4A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryManagementMVC", "LibraryManagementMVC\LibraryManagementMVC.csproj", "{D90E438D-E454-46F3-BEFE-D87A3D87E4A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagementLibrary", "LibraryManagementLibrary\LibraryManagementLibrary.csproj", "{EEC95D28-1C20-4ADC-BF77-759B94D20932}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryManagementLibrary", "LibraryManagementLibrary\LibraryManagementLibrary.csproj", "{EEC95D28-1C20-4ADC-BF77-759B94D20932}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

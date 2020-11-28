@@ -31,6 +31,8 @@ namespace LibraryManagementMVC
             });
             services.AddControllersWithViews();
             services.AddScoped<IDataConnection,SqlConnector>();
+            services.AddRazorPages();
+            services.AddServerSideBlazor();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,6 +60,8 @@ namespace LibraryManagementMVC
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
+                endpoints.MapBlazorHub();
             });
         }
     }
