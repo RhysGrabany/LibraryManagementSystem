@@ -18,15 +18,24 @@
         <input type="submit" value="Search" class="btn btn-default" />
     }
 
-    @{ 
-        var SearchTerm = Model.SearchTerm;
-        if (SearchTerm != null)
+    @{
+        var People = Model.People;
+        if (People != null)
         {
             <div>
-                <p>
-                    @SearchTerm
-                </p>
+                <label>ID</label>
+                <label>First Name</label>
+                <label>Last Name</label>
             </div>
+            foreach (var person in People)
+            {
+                <div>
+                    <label>@person.PersonID</label>
+                    <label>@person.FirstName</label>
+                    <label>@person.LastName</label>
+                    <input type="button" value="View" />
+                </div>
+            }
         }
     }
 

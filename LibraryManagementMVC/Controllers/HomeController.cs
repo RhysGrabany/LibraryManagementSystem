@@ -39,8 +39,7 @@ namespace LibraryManagementMVC.Controllers
 
         public ActionResult CustomerSignUp()
         {
-            CustomerSignUpModel vm = new CustomerSignUpModel();
-            return View(vm);
+            return View(new CustomerSignUpModel());
         }
 
         [HttpPost]
@@ -106,8 +105,6 @@ namespace LibraryManagementMVC.Controllers
             var SearchTerm = vm.SearchTerm;
 
             vm.People = _sql.FindPeopleWithSearchTerm(SearchTerm);
-
-
 
             return View("SearchPeople", vm);
         }
