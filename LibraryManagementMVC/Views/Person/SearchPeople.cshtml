@@ -33,7 +33,12 @@
                     <label>@person.PersonID</label>
                     <label>@person.FirstName</label>
                     <label>@person.LastName</label>
-                    <input type="button" value="View" />
+                    <a asp-controller="Person" asp-action="PersonViewInfo">
+                        @{
+                            ViewBag.Person = person;
+                        }
+                        <input type="button" value="View" />
+                    </a>
                 </div>
             }
         }

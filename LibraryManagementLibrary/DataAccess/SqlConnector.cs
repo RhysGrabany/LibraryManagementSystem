@@ -140,15 +140,10 @@ namespace LibraryManagementLibrary.DataAccess
         public List<Person> FindPeopleWithSearchTerm(string searchTerm)
         {
 
-            var FirstNames = _db.People
-                .Where(x => x.FirstName == searchTerm)
+            return _db.People
+                .Where(x => x.FirstName == searchTerm 
+                        || x.LastName == searchTerm)
                 .ToList();
-
-            var LastNames = _db.People
-                .Where(x => x.LastName == searchTerm)
-                .ToList();
-
-            return FirstNames.SqlConcat(LastNames);
         }
 
 
