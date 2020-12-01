@@ -1,0 +1,41 @@
+﻿
+@model SearchPeopleModel
+
+@{
+    ViewData["Title"] = "Search People";
+
+
+}
+
+
+<div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.TextBoxFor(model => model.SearchTerm)
+
+
+        <input type="submit" value="Search" class="btn btn-default" />
+    }
+
+    @{ 
+        var SearchTerm = Model.SearchTerm;
+        if (SearchTerm != null)
+        {
+            <div>
+                <p>
+                    @SearchTerm
+                </p>
+            </div>
+        }
+    }
+
+
+
+
+
+
+
+
+
+</div>

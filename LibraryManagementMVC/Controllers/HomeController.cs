@@ -94,9 +94,22 @@ namespace LibraryManagementMVC.Controllers
         }
 
 
-        public IActionResult SearchPersons()
+        public ActionResult SearchPeople()
         {
-            return View();
+            return View(new SearchPeopleModel());
+        }
+
+        [HttpPost]
+        public ActionResult SearchPeople(SearchPeopleModel vm)
+        {
+
+            var SearchTerm = vm.SearchTerm;
+
+            vm.People = _sql.FindPeopleWithSearchTerm(SearchTerm);
+
+
+
+            return View("SearchPeople", vm);
         }
 
 

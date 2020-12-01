@@ -137,6 +137,21 @@ namespace LibraryManagementLibrary.DataAccess
                     .First();
         }
 
+        public List<Person> FindPeopleWithSearchTerm(string searchTerm)
+        {
+
+            var FirstNames = _db.People
+                .Where(x => x.FirstName == searchTerm)
+                .ToList();
+
+            var LastNames = _db.People
+                .Where(x => x.LastName == searchTerm)
+                .ToList();
+
+            return FirstNames.SqlConcat(LastNames);
+        }
+
+
         #region Person/Address Checks
 
         /// <summary>
