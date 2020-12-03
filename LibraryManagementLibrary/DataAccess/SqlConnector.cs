@@ -142,13 +142,18 @@ namespace LibraryManagementLibrary.DataAccess
                     .First();
         }
 
-        public List<Person> FindPeopleWithSearchTerm(string searchTerm)
+        public async Task<List<Person>> FindPeopleWithSearchTerm(string searchTerm)
         {
 
-            return _db.People
+            return await _db.People
                 .Where(x => x.FirstName == searchTerm 
-                        || x.LastName == searchTerm)
-                .ToList();
+                || x.LastName == searchTerm)
+                .ToListAsync();
+
+            //return await _db.People
+            //    .Where(x => x.FirstName == searchTerm 
+            //            || x.LastName == searchTerm)
+            //    .ToList();
         }
 
 

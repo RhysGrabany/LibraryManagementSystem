@@ -61,7 +61,7 @@ namespace LibraryManagementLibrary.DataAccess
         /// <returns>The first address result as an Address model</returns>
         Address GetAddress(Address address);
 
-        List<Person> FindPeopleWithSearchTerm(string searchTerm);
+        Task<List<Person>> FindPeopleWithSearchTerm(string searchTerm);
 
 
         #endregion

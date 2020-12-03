@@ -88,21 +88,17 @@ namespace LibraryManagementMVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult SearchPeople(SearchPeopleModel vm, string SelectedPerson)
+        public async Task<IActionResult> SearchPeople(SearchPeopleModel vm, string SelectedPerson)
         {
 
             var SearchTerm = vm.SearchTerm;
 
             if (SelectedPerson == null)
             {
-                vm.People = _sql.FindPeopleWithSearchTerm(SearchTerm);
+                vm.People = await _sql.FindPeopleWithSearchTerm(SearchTerm);
                 return View("SearchPeople", vm);
             }
-            else
-            {
-                PersonModel SearchedPerson = new PersonModel();
-                return View("PersonViewInfo", SearchedPerson);
-            }
+            return NotFound();
         }
 
 
