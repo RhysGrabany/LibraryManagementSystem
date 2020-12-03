@@ -92,8 +92,6 @@ namespace LibraryManagementMVC.Controllers
         {
 
             var SearchTerm = vm.SearchTerm;
-            var Person = ViewBag.Person;
-
 
             if (SelectedPerson == null)
             {
@@ -107,10 +105,16 @@ namespace LibraryManagementMVC.Controllers
             }
         }
 
-        public ActionResult PersonViewInfo(int? ID)
+
+        public async Task<IActionResult> PersonViewInfo(int? id)
         {
 
-            var person = _sql.GetPersonByID(ID);
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var person = await _sql.GetPersonByIDAsync(id);
 
             return View("PersonViewInfo", person);
         }

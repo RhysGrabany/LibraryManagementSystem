@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace LibraryManagementLibrary.DataAccess
 {
@@ -123,9 +124,9 @@ namespace LibraryManagementLibrary.DataAccess
                 .First();
         }
 
-        public Person GetPersonByID(int? ID)
+        public async Task<Person> GetPersonByIDAsync(int? ID)
         {
-            return _db.People.Where(x => x.PersonID == ID).First();
+            return await _db.People.Where(x => x.PersonID == ID).FirstOrDefaultAsync();
         }
         /// <summary>
         /// Getting the first result in the Addresses table when
