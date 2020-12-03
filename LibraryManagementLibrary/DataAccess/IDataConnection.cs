@@ -50,6 +50,8 @@ namespace LibraryManagementLibrary.DataAccess
         /// <returns>A Person model with the search result</returns>
         Person GetPerson(Person person);
 
+        Person GetPersonByID(int? ID);
+
         /// <summary>
         /// Getting the first result in the Addresses table when
         /// using a search basaed on postcode and number

@@ -4,7 +4,9 @@
 @{
     ViewData["Title"] = "Search People";
 
+    var SearchedPerson = Model.Person;
 
+    int i = 0;
 }
 
 
@@ -22,26 +24,27 @@
         var People = Model.People;
         if (People != null)
         {
-            <div>
-                <label>ID</label>
-                <label>First Name</label>
-                <label>Last Name</label>
-            </div>
-            foreach (var person in People)
+            @using (Html.BeginForm())
             {
                 <div>
-                    <label>@person.PersonID</label>
-                    <label>@person.FirstName</label>
-                    <label>@person.LastName</label>
-                    <a asp-controller="Person" asp-action="PersonViewInfo">
-                        @{
-                            ViewBag.Person = person;
-                        }
-                        <input type="button" value="View" />
-                    </a>
+                    <label>ID</label>
+                    <label>First Name</label>
+                    <label>Last Name</label>
                 </div>
-            }
-        }
+                foreach (var person in People)
+                {
+                    <div>
+                        <label>@person.PersonID</label>
+                        <label>@person.FirstName</label>
+                        <label>@person.LastName</label>
+                        <button>
+                            @Html.ActionLink("View", "PersonViewInfo", "Person", new { id = person.PersonID}, null)
+                        </button>
+
+                    </div>
+                    i++;
+                }
+            }}
     }
 
 

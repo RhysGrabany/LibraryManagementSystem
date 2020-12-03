@@ -88,22 +88,32 @@ namespace LibraryManagementMVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult SearchPeople(SearchPeopleModel vm)
+        public ActionResult SearchPeople(SearchPeopleModel vm, string SelectedPerson)
         {
 
             var SearchTerm = vm.SearchTerm;
+            var Person = ViewBag.Person;
 
-            vm.People = _sql.FindPeopleWithSearchTerm(SearchTerm);
 
-            return View("SearchPeople", vm);
+            if (SelectedPerson == null)
+            {
+                vm.People = _sql.FindPeopleWithSearchTerm(SearchTerm);
+                return View("SearchPeople", vm);
+            }
+            else
+            {
+                PersonModel SearchedPerson = new PersonModel();
+                return View("PersonViewInfo", SearchedPerson);
+            }
         }
 
-        public IActionResult PersonViewInfo()
+        public ActionResult PersonViewInfo(int? ID)
         {
 
-            return View();
-        }
+            var person = _sql.GetPersonByID(ID);
 
+            return View("PersonViewInfo", person);
+        }
 
 
 

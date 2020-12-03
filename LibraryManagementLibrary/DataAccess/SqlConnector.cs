@@ -123,6 +123,10 @@ namespace LibraryManagementLibrary.DataAccess
                 .First();
         }
 
+        public Person GetPersonByID(int? ID)
+        {
+            return _db.People.Where(x => x.PersonID == ID).First();
+        }
         /// <summary>
         /// Getting the first result in the Addresses table when
         /// using a search basaed on postcode and number
