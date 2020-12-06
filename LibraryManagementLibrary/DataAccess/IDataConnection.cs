@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace LibraryManagementLibrary.DataAccess
 {
@@ -50,6 +51,8 @@ namespace LibraryManagementLibrary.DataAccess
         /// <returns>A Person model with the search result</returns>
         Person GetPerson(Person person);
 
+        Task<Person> GetPersonByIDAsync(int? ID);
+
         /// <summary>
         /// Getting the first result in the Addresses table when
         /// using a search basaed on postcode and number
@@ -58,7 +61,7 @@ namespace LibraryManagementLibrary.DataAccess
         /// <returns>The first address result as an Address model</returns>
         Address GetAddress(Address address);
 
-        List<Person> FindPeopleWithSearchTerm(string searchTerm);
+        Task<List<Person>> FindPeopleWithSearchTermAsync(string searchTerm);
 
 
         #endregion

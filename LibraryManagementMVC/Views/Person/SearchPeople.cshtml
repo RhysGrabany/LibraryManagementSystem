@@ -4,7 +4,7 @@
 @{
     ViewData["Title"] = "Search People";
 
-
+    var SearchedPerson = Model.Person;
 }
 
 
@@ -14,7 +14,6 @@
     {
         @Html.TextBoxFor(model => model.SearchTerm)
 
-
         <input type="submit" value="Search" class="btn btn-default" />
     }
 
@@ -22,34 +21,26 @@
         var People = Model.People;
         if (People != null)
         {
-            <div>
-                <label>ID</label>
-                <label>First Name</label>
-                <label>Last Name</label>
-            </div>
-            foreach (var person in People)
+            @using (Html.BeginForm())
             {
-                <div>
-                    <label>@person.PersonID</label>
-                    <label>@person.FirstName</label>
-                    <label>@person.LastName</label>
-                    <a asp-controller="Person" asp-action="PersonViewInfo">
-                        @{
-                            ViewBag.Person = person;
-                        }
-                        <input type="button" value="View" />
-                    </a>
-                </div>
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Person.PersonID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Person.FirstName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Person.LastName)
+                        </th>
+                    </tr>
+                    @foreach (var person in People)
+                    {
+                        @await Html.PartialAsync("Components/SearchPeoplePartial", person);
+                    }
+                </table>
             }
         }
     }
-
-
-
-
-
-
-
-
-
 </div>

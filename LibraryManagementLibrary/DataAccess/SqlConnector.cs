@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace LibraryManagementLibrary.DataAccess
 {
@@ -124,6 +125,15 @@ namespace LibraryManagementLibrary.DataAccess
         }
 
         /// <summary>
+        /// Finds a Person in database by ID
+        /// </summary>
+        /// <param name="ID">The ID of the person being found</param>
+        /// <returns>Returns the Person from the database</returns>
+        public async Task<Person> GetPersonByIDAsync(int? ID)
+        {
+            return await _db.People.Where(x => x.PersonID == ID).FirstOrDefaultAsync();
+        }
+        /// <summary>
         /// Getting the first result in the Addresses table when
         /// using a search basaed on postcode and number
         /// </summary>
@@ -137,13 +147,18 @@ namespace LibraryManagementLibrary.DataAccess
                     .First();
         }
 
-        public List<Person> FindPeopleWithSearchTerm(string searchTerm)
+        /// <summary>
+        /// Searches for a Person with a supplied search term asynchronously
+        /// </summary>
+        /// <param name="searchTerm">The search term being used to find a person</param>
+        /// <returns>Returns a list of Person models that can be used</returns>
+        public async Task<List<Person>> FindPeopleWithSearchTermAsync(string searchTerm)
         {
 
-            return _db.People
-                .Where(x => x.FirstName == searchTerm 
-                        || x.LastName == searchTerm)
-                .ToList();
+            return await _db.People
+                .Where(x => x.FirstName.Contains(searchTerm) 
+                || x.LastName.Contains(searchTerm))
+                .ToListAsync();
         }
 
 
