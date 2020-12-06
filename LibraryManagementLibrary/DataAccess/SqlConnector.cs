@@ -11,6 +11,7 @@ namespace LibraryManagementLibrary.DataAccess
     public class SqlConnector : IDataConnection
     {
 
+        // Little bit of Dependency Injection
         private readonly LibraryContext _db;
 
         public SqlConnector(LibraryContext db)
@@ -110,6 +111,25 @@ namespace LibraryManagementLibrary.DataAccess
 
         #region Getting Information
 
+        #region Address Info
+        /// <summary>
+        /// Getting the first result in the Addresses table when
+        /// using a search basaed on postcode and number
+        /// </summary>
+        /// <param name="address">The address that is being searched for</param>
+        /// <returns>The first address result as an Address model</returns>
+        public Address GetAddress(Address address)
+        {
+            return _db.Addresses
+                    .Where(x => x.Postcode == address.Postcode)
+                    .Where(x => x.Number == address.Number)
+                    .First();
+        }
+
+        #endregion
+
+        #region Person Info
+
         /// <summary>
         /// Get the first result in the Persons table 
         /// when using a search based on first name and last name
@@ -133,19 +153,6 @@ namespace LibraryManagementLibrary.DataAccess
         {
             return await _db.People.Where(x => x.PersonID == ID).FirstOrDefaultAsync();
         }
-        /// <summary>
-        /// Getting the first result in the Addresses table when
-        /// using a search basaed on postcode and number
-        /// </summary>
-        /// <param name="address">The address that is being searched for</param>
-        /// <returns>The first address result as an Address model</returns>
-        public Address GetAddress(Address address)
-        {
-            return _db.Addresses
-                    .Where(x => x.Postcode == address.Postcode)
-                    .Where(x => x.Number == address.Number)
-                    .First();
-        }
 
         /// <summary>
         /// Searches for a Person with a supplied search term asynchronously
@@ -161,6 +168,7 @@ namespace LibraryManagementLibrary.DataAccess
                 .ToListAsync();
         }
 
+        #endregion
 
         #region Person/Address Checks
 

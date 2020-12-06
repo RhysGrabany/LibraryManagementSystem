@@ -43,16 +43,8 @@ namespace LibraryManagementLibrary.DataAccess
         #region Getting Information
 
         #region Getting Specific Results
-        /// <summary>
-        /// Get the first result in the Persons table 
-        /// when using a search based on first name and last name
-        /// </summary>
-        /// <param name="person">The Person that is being searched for</param>
-        /// <returns>A Person model with the search result</returns>
-        Person GetPerson(Person person);
 
-        Task<Person> GetPersonByIDAsync(int? ID);
-
+        #region Address Information
         /// <summary>
         /// Getting the first result in the Addresses table when
         /// using a search basaed on postcode and number
@@ -61,8 +53,34 @@ namespace LibraryManagementLibrary.DataAccess
         /// <returns>The first address result as an Address model</returns>
         Address GetAddress(Address address);
 
+        #endregion
+
+        #region Person Information
+
+        /// <summary>
+        /// Get the first result in the Persons table 
+        /// when using a search based on first name and last name
+        /// </summary>
+        /// <param name="person">The Person that is being searched for</param>
+        /// <returns>A Person model with the search result</returns>
+        Person GetPerson(Person person);
+
+        /// <summary>
+        /// Finds a person using the nullable id provided
+        /// </summary>
+        /// <param name="ID">The ID of the person being searched</param>
+        /// <returns>Returns a task of the person that was searched</returns>
+        Task<Person> GetPersonByIDAsync(int? ID);
+
+
+        /// <summary>
+        /// Finding a list of person with a search term string; uses the string for comparisons in first name and last name
+        /// </summary>
+        /// <param name="searchTerm">The string being searched in people</param>
+        /// <returns>Returns a Task that contains the list of people</returns>
         Task<List<Person>> FindPeopleWithSearchTermAsync(string searchTerm);
 
+        #endregion
 
         #endregion
 
