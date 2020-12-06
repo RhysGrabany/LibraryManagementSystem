@@ -13,7 +13,7 @@
     @using (Html.BeginForm())
     {
         @Html.TextBoxFor(model => model.SearchTerm)
-
+        @*<a asp-controller="SearchPeopleModel" asp-action="PersonViewInfo" asp-route-id="@id">View</a>*@
         <input type="submit" value="Search" class="btn btn-default" />
     }
 
@@ -24,6 +24,7 @@
             @using (Html.BeginForm())
             {
                 <table class="table">
+
                     <tr>
                         <th>
                             @Html.DisplayNameFor(model => model.Person.PersonID)
@@ -35,9 +36,10 @@
                             @Html.DisplayNameFor(model => model.Person.LastName)
                         </th>
                     </tr>
+
                     @foreach (var person in People)
                     {
-                        @await Html.PartialAsync("Components/SearchPeoplePartial", person);
+                        @await Html.PartialAsync("Components/SearchPeopleResultsPartial", person);
                     }
                 </table>
             }

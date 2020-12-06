@@ -88,30 +88,34 @@ namespace LibraryManagementMVC.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> SearchPeople(SearchPeopleModel vm, string SelectedPerson)
+        public async Task<IActionResult> SearchPeople(SearchPeopleModel vm)
         {
 
             var SearchTerm = vm.SearchTerm;
 
-            if (SelectedPerson == null)
+            // Uses the search term to find all the people related and returns a list to the original view
+            if (SearchTerm != null)
             {
                 vm.People = await _sql.FindPeopleWithSearchTermAsync(SearchTerm);
                 return View("SearchPeople", vm);
             }
-            return NotFound();
+            // Otherwise just return the view with the supplied view model
+            return View("SearchPeople", vm);
         }
 
 
         public async Task<IActionResult> PersonViewInfo(int? id)
         {
-
+            // ID is null? Throw a NotFound
             if (id == null)
             {
                 return NotFound();
             }
 
+            // Use async method to find the person with their id and use that
             var person = await _sql.GetPersonByIDAsync(id);
 
+            // Return the new view and pass the PersonModel with the person
             return View("PersonViewInfo", new PersonModel() { Person = person });
         }
 
