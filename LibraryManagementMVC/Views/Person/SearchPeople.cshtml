@@ -14,7 +14,6 @@
     {
         @Html.TextBoxFor(model => model.SearchTerm)
 
-
         <input type="submit" value="Search" class="btn btn-default" />
     }
 
@@ -38,7 +37,7 @@
                     </tr>
                     @foreach (var person in People)
                     {
-                        @await Html.PartialAsync("SearchPeoplePartial", person);
+                        @await Html.PartialAsync("Components/SearchPeoplePartial", person);
                     }
                 </table>
             }

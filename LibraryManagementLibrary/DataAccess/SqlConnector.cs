@@ -124,6 +124,11 @@ namespace LibraryManagementLibrary.DataAccess
                 .First();
         }
 
+        /// <summary>
+        /// Finds a Person in database by ID
+        /// </summary>
+        /// <param name="ID">The ID of the person being found</param>
+        /// <returns>Returns the Person from the database</returns>
         public async Task<Person> GetPersonByIDAsync(int? ID)
         {
             return await _db.People.Where(x => x.PersonID == ID).FirstOrDefaultAsync();
@@ -142,18 +147,18 @@ namespace LibraryManagementLibrary.DataAccess
                     .First();
         }
 
-        public async Task<List<Person>> FindPeopleWithSearchTerm(string searchTerm)
+        /// <summary>
+        /// Searches for a Person with a supplied search term asynchronously
+        /// </summary>
+        /// <param name="searchTerm">The search term being used to find a person</param>
+        /// <returns>Returns a list of Person models that can be used</returns>
+        public async Task<List<Person>> FindPeopleWithSearchTermAsync(string searchTerm)
         {
 
             return await _db.People
-                .Where(x => x.FirstName == searchTerm 
-                || x.LastName == searchTerm)
+                .Where(x => x.FirstName.Contains(searchTerm) 
+                || x.LastName.Contains(searchTerm))
                 .ToListAsync();
-
-            //return await _db.People
-            //    .Where(x => x.FirstName == searchTerm 
-            //            || x.LastName == searchTerm)
-            //    .ToList();
         }
 
 

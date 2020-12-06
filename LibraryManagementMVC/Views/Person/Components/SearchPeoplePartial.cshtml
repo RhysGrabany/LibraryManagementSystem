@@ -9,6 +9,7 @@
 @{
 
     var id = Model.PersonID;
+
 }
 
 <tr>
@@ -22,6 +23,6 @@
         @Html.DisplayFor(m => m.LastName)
     </td>
     <td>
-        <a asp-action="PersonViewInfo" asp-route-id="@id">View</a>
+        <a asp-controller="Person" asp-action="PersonViewInfo" asp-route-id="@id">View</a>
     </td>
 </tr>

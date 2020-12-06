@@ -95,7 +95,7 @@ namespace LibraryManagementMVC.Controllers
 
             if (SelectedPerson == null)
             {
-                vm.People = await _sql.FindPeopleWithSearchTerm(SearchTerm);
+                vm.People = await _sql.FindPeopleWithSearchTermAsync(SearchTerm);
                 return View("SearchPeople", vm);
             }
             return NotFound();
