@@ -112,7 +112,7 @@ namespace LibraryManagementMVC.Controllers
 
             var person = await _sql.GetPersonByIDAsync(id);
 
-            return View("PersonViewInfo", person);
+            return View("PersonViewInfo", new PersonModel() { Person = person });
         }
 
 

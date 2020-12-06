@@ -3,10 +3,10 @@
 *@
 @using LibraryManagementLibrary.Models
 
-@model Person
+@model PersonModel
 
 @{
-    
+    var person = Model.Person;
 
 }
 
@@ -14,7 +14,7 @@
 
 
 <p>
-    @Model.FirstName
+    @person.FirstName
 </p>
 
 
