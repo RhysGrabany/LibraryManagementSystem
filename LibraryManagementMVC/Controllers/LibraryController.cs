@@ -1,4 +1,5 @@
 ﻿using LibraryManagementLibrary.DataAccess;
+using LibraryManagementLibrary.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -18,5 +19,17 @@ namespace LibraryManagementMVC.Controllers
             _logger = logger;
             _sql = sql;
         }
+
+        public ActionResult AddNewBook()
+        {
+            return View(new Book());
+        }
+
+        [HttpPost]
+        public IActionResult AddNewBook(Book vm)
+        {
+            return View("AddNewBook", vm);
+        }
+
     }
 }

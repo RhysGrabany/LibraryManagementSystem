@@ -1,7 +1,10 @@
-﻿@model CustomerSignUpModel
+﻿
 
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-@using (Html.BeginForm("CustomerSignUp", "Home", FormMethod.Post))
+
+@model CustomerSignUpModel
+
+
+@using (Html.BeginForm("CustomerSignUp", "Person", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     ViewData["Title"] = "Customer Sign Up";

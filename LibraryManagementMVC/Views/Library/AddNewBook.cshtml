@@ -1,5 +1,43 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿
+@using LibraryManagementLibrary.Models
+@model Book
+
 @{
+}
+
+@using (Html.BeginForm("AddNewBook", "Library", FormMethod.Post))
+{
+
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Title, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(m => m.Title)
+            @Html.ValidationMessageFor(m => m.Title)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Author, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(m => m.Author)
+            @Html.ValidationMessageFor(m => m.Author)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ISBN, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(m => m.ISBN)
+            @Html.ValidationMessageFor(m => m.ISBN)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Submit" class="btn btn-default" />
+        </div>
+    </div>
+
+
 }
