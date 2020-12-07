@@ -15,11 +15,6 @@ namespace LibraryManagementMVC.Controllers
         private readonly ILogger<PersonController> _logger;
         private readonly IDataConnection _sql;
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
         public PersonController(ILogger<PersonController> logger, IDataConnection sql)
         {
             _logger = logger;
