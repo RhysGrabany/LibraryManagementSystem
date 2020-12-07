@@ -155,3 +155,4 @@ D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\obj\Debug\netcore
 D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\obj\Debug\netcoreapp3.1\Razor\Views\Person\PersonViewInfo.cshtml.g.cs
 D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\obj\Debug\netcoreapp3.1\Razor\Views\Person\SearchPeople.cshtml.g.cs
 D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\obj\Debug\netcoreapp3.1\Razor\Views\Person\Components\SearchPeopleResultsPartial.cshtml.g.cs
+D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\obj\Debug\netcoreapp3.1\Razor\Views\Person\Components\PersonAddressInfoListedPartial.cshtml.g.cs

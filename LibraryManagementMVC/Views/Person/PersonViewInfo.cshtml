@@ -7,15 +7,63 @@
 
 @{
     var person = Model.Person;
+    Address address = new Address();
+    var addresses = Model.Person.Addresses;
 
 }
 
 
 
+<table class="table">
+    <tr>
+        <th>
+            @Html.LabelFor(x => x.Person.PersonID)
+        </th>
+        <th>
+            @Html.LabelFor(x => x.Person.FirstName)
+        </th>
+        <th>
+            @Html.LabelFor(x => x.Person.LastName)
+        </th>
+        <th>
+            @Html.LabelFor(x => x.Person.EmailAddress)
+        </th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(x => x.Person.PersonID)
+        </td>
+        <td>
+            @Html.DisplayFor(x => x.Person.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(x => x.Person.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(x => x.Person.EmailAddress.Email)
+        </td>
+    </tr>
+</table>
 
-<p>
-    @person.FirstName
-</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.LabelFor(i => address.Number)
+        </th>
+        <th>
+            @Html.LabelFor(i => address.AddressLine)
+        </th>
+        <th>
+            @Html.LabelFor(i => address.Town)
+        </th>
+        <th>
+            @Html.LabelFor(i => address.Postcode)
+        </th>
+    </tr>
+    
+    @await Html.PartialAsync("Components/PersonAddressInfoListedPartial", addresses)
+
+</table>
 
 
 

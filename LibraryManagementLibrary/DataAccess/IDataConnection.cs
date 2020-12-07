@@ -42,6 +42,8 @@ namespace LibraryManagementLibrary.DataAccess
 
         #region Getting Information
 
+        Task<Person> GetAllPersonInfoByIDAsync(int? id); 
+
         #region Getting Specific Results
 
         #region Address Information

@@ -113,7 +113,7 @@ namespace LibraryManagementMVC.Controllers
             }
 
             // Use async method to find the person with their id and use that
-            var person = await _sql.GetPersonByIDAsync(id);
+            var person = await _sql.GetAllPersonInfoByIDAsync(id);
 
             // Return the new view and pass the PersonModel with the person
             return View("PersonViewInfo", new PersonModel() { Person = person });
