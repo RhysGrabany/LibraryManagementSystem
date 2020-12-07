@@ -3,21 +3,21 @@
 @model List<Address>
 
 @{
-    Address address = new Address();
+    Address addressInfo = new Address();
 }
 
 <tr>
     <th>
-        @Html.LabelFor(i => address.Number)
+        @Html.LabelFor(i => addressInfo.Number)
     </th>
     <th>
-        @Html.LabelFor(i => address.AddressLine)
+        @Html.LabelFor(i => addressInfo.AddressLine)
     </th>
     <th>
-        @Html.LabelFor(i => address.Town)
+        @Html.LabelFor(i => addressInfo.Town)
     </th>
     <th>
-        @Html.LabelFor(i => address.Postcode)
+        @Html.LabelFor(i => addressInfo.Postcode)
     </th>
 </tr>
 

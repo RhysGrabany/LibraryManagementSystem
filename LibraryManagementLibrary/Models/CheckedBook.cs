@@ -49,6 +49,7 @@ namespace LibraryManagementLibrary.Models
         /// The return date for the book
         /// Required
         /// </summary>
+        [Display(Name = "Return Date")]
         [Required(ErrorMessage = "{0} is required")]
         public DateTime ReturnDate { get; set; }
     }
