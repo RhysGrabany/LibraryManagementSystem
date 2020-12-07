@@ -17,8 +17,7 @@
     }
 
     @{
-        var People = Model.People;
-        if (People != null)
+        if (Model.People != null)
         {
             @using (Html.BeginForm())
             {
@@ -36,7 +35,7 @@
                         </th>
                     </tr>
 
-                    @foreach (var person in People)
+                    @foreach (var person in Model.People)
                     {
                         @await Html.PartialAsync("Components/SearchPeopleResultsPartial", person);
                     }

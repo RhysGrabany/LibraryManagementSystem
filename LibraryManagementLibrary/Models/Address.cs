@@ -52,11 +52,12 @@ namespace LibraryManagementLibrary.Models
         [Required(ErrorMessage = "{0} is required")]
         [RegularExpression("([1-9][0-9]*)", ErrorMessage = "Number must be a natural number")]
         public int Number { get; set; }
-        
+
         /// <summary>
         /// Address of the house
         /// MaxLength(80), MinLength(5) Required
         /// </summary>
+        [Display(Name = "Address Line")]
         [Required(ErrorMessage = "{0} is required")]
         [MaxLength(80), MinLength(5)]
         public string AddressLine { get; set; }

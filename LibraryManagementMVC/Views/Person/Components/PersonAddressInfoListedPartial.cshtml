@@ -1,0 +1,43 @@
+﻿
+@using LibraryManagementLibrary.Models
+@model List<Address>
+
+@{
+    Address addressInfo = new Address();
+}
+
+<tr>
+    <th>
+        @Html.LabelFor(i => addressInfo.Number)
+    </th>
+    <th>
+        @Html.LabelFor(i => addressInfo.AddressLine)
+    </th>
+    <th>
+        @Html.LabelFor(i => addressInfo.Town)
+    </th>
+    <th>
+        @Html.LabelFor(i => addressInfo.Postcode)
+    </th>
+</tr>
+
+@{
+    foreach (var addressItem in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(ai => addressItem.Number)
+            </td>
+            <td>
+                @Html.DisplayFor(ai => addressItem.AddressLine)
+            </td>
+            <td>
+                @Html.DisplayFor(ai => addressItem.Town)
+            </td>
+            <td>
+                @Html.DisplayFor(ai => addressItem.Postcode)
+            </td>
+        </tr>
+    }
+}
+

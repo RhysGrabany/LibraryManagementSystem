@@ -1,0 +1,42 @@
+﻿
+@using LibraryManagementLibrary.Models
+@model List<CheckedBook>
+
+@{
+    CheckedBook checkedBookInfo = new CheckedBook();
+}
+
+
+
+<tr>
+    <th>
+        @Html.LabelFor(cbi => checkedBookInfo.Book.Title)
+    </th>
+    <th>
+        @Html.LabelFor(cbi => checkedBookInfo.Book.Author)
+    </th>
+    <th>
+        @Html.LabelFor(cbi => checkedBookInfo.Book.ISBN)
+    </th>
+    <th>
+        @Html.LabelFor(cbi => checkedBookInfo.ReturnDate)
+    </th>
+</tr>
+
+@{
+    foreach (var book in Model)
+    {
+        <tr>
+            @Html.DisplayFor(b => book.Book.Title)
+        </tr>
+        <tr>
+            @Html.DisplayFor(b => book.Book.Author)
+        </tr>
+        <tr>
+            @Html.DisplayFor(b => book.Book.ISBN)
+        </tr>
+        <tr>
+            @Html.DisplayFor(b => book.ReturnDate)
+        </tr>
+    }
+}

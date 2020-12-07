@@ -15,11 +15,6 @@ namespace LibraryManagementMVC.Controllers
         private readonly ILogger<PersonController> _logger;
         private readonly IDataConnection _sql;
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
         public PersonController(ILogger<PersonController> logger, IDataConnection sql)
         {
             _logger = logger;
@@ -113,7 +108,7 @@ namespace LibraryManagementMVC.Controllers
             }
 
             // Use async method to find the person with their id and use that
-            var person = await _sql.GetPersonByIDAsync(id);
+            var person = await _sql.GetAllPersonInfoByIDAsync(id);
 
             // Return the new view and pass the PersonModel with the person
             return View("PersonViewInfo", new PersonModel() { Person = person });

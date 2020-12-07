@@ -111,6 +111,17 @@ namespace LibraryManagementLibrary.DataAccess
 
         #region Getting Information
 
+        public async Task<Person> GetAllPersonInfoByIDAsync(int? id)
+        {
+            return await _db.People
+                .Include(e => e.EmailAddress)
+                .Include(cb => cb.CheckedBooks)
+                .Include(ad => ad.Addresses)
+                .Where(x => x.PersonID == id)
+                .FirstOrDefaultAsync();
+
+        }
+
         #region Address Info
         /// <summary>
         /// Getting the first result in the Addresses table when

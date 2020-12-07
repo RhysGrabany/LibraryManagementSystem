@@ -1,7 +1,6 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@using LibraryManagementLibrary.Models
 
 @model PersonModel
 
@@ -12,10 +11,45 @@
 
 
 
+<table class="table">
+    <tr>
+        <th>
+            @Html.LabelFor(x => x.Person.PersonID)
+        </th>
+        <th>
+            @Html.LabelFor(x => x.Person.FirstName)
+        </th>
+        <th>
+            @Html.LabelFor(x => x.Person.LastName)
+        </th>
+        <th>
+            @Html.LabelFor(x => x.Person.EmailAddress)
+        </th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(x => x.Person.PersonID)
+        </td>
+        <td>
+            @Html.DisplayFor(x => x.Person.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(x => x.Person.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(x => x.Person.EmailAddress.Email)
+        </td>
+    </tr>
+</table>
 
-<p>
-    @person.FirstName
-</p>
+<table class="table">
+    
+    @await Html.PartialAsync("Components/PersonAddressInfoListedPartial", Model.Person.Addresses)
 
+</table>
+
+<table class="table">
+    @await Html.PartialAsync("Components/PersonCheckedBooksListedPartial", Model.Person.CheckedBooks) 
+</table>
 
 
