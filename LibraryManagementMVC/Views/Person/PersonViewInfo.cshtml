@@ -46,20 +46,6 @@
 </table>
 
 <table class="table">
-    <tr>
-        <th>
-            @Html.LabelFor(i => address.Number)
-        </th>
-        <th>
-            @Html.LabelFor(i => address.AddressLine)
-        </th>
-        <th>
-            @Html.LabelFor(i => address.Town)
-        </th>
-        <th>
-            @Html.LabelFor(i => address.Postcode)
-        </th>
-    </tr>
     
     @await Html.PartialAsync("Components/PersonAddressInfoListedPartial", addresses)
 

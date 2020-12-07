@@ -3,9 +3,23 @@
 @model List<Address>
 
 @{
-
+    Address address = new Address();
 }
 
+<tr>
+    <th>
+        @Html.LabelFor(i => address.Number)
+    </th>
+    <th>
+        @Html.LabelFor(i => address.AddressLine)
+    </th>
+    <th>
+        @Html.LabelFor(i => address.Town)
+    </th>
+    <th>
+        @Html.LabelFor(i => address.Postcode)
+    </th>
+</tr>
 
 @{
     foreach (var addressItem in Model)
