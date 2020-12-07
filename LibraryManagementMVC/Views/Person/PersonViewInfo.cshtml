@@ -7,8 +7,6 @@
 
 @{
     var person = Model.Person;
-    Address address = new Address();
-    var addresses = Model.Person.Addresses;
 
 }
 
@@ -47,9 +45,12 @@
 
 <table class="table">
     
-    @await Html.PartialAsync("Components/PersonAddressInfoListedPartial", addresses)
+    @await Html.PartialAsync("Components/PersonAddressInfoListedPartial", Model.Person.Addresses)
 
 </table>
 
+<table class="table">
+
+</table>
 
 
