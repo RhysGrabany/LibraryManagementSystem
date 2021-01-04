@@ -234,6 +234,24 @@ namespace LibraryManagementLibrary.DataAccess
         }
         #endregion
 
+        #region Book Check
+
+        public bool IsBookStored(string title, string author)
+        {
+
+            return _db.Books
+                .Where(t => t.Title == title)
+                .Where(a => a.Author == author)
+                .Count() > 0;
+
+
+        }
+
+
+        #endregion
+
+
+
         #endregion
 
     }

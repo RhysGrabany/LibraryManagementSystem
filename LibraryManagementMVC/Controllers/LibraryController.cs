@@ -28,6 +28,15 @@ namespace LibraryManagementMVC.Controllers
         [HttpPost]
         public IActionResult AddNewBook(Book vm)
         {
+
+
+            var author = vm.Author;
+            var title = vm.Title;
+            var isbn = vm.ISBN;
+
+
+
+
             return View("AddNewBook", vm);
         }
 
