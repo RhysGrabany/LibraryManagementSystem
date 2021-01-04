@@ -31,10 +31,12 @@ namespace LibraryManagementMVC.Controllers
 
 
             var author = vm.Author;
-            var title = vm.Title;
-            var isbn = vm.ISBN;
+            var title = vm.Title;       
 
-
+            if(!_sql.IsBookSaved(title, author))
+            {
+                _sql.AddNewBook(vm);
+            }
 
 
             return View("AddNewBook", vm);

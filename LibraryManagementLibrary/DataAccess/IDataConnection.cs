@@ -38,6 +38,8 @@ namespace LibraryManagementLibrary.DataAccess
         /// <param name="address">The existing address being utilised</param>
         void AddExistingPersonToExistingAddress(Person person, Address address);
 
+        void AddNewBook(Book book);
+
         #endregion
 
         #region Getting Information
@@ -110,7 +112,7 @@ namespace LibraryManagementLibrary.DataAccess
         /// <returns>True if the address has a relationship with the Person, False if not</returns>
         bool IsPersonAddressSaved(Person person, Address address);
 
-        bool IsBookStored(string title, string author);
+        bool IsBookSaved(string title, string author);
 
         #endregion
 

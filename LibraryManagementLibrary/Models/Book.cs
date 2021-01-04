@@ -32,7 +32,7 @@ namespace LibraryManagementLibrary.Models
         /// MaxLength(50), MinLength(5) Required
         /// </summary>
         [Required(ErrorMessage = "{0} is required")]
-        [MaxLength(50), MinLength(5)]
+        [MinLength(5), MaxLength(50)]
         public string Title { get; set; }
 
         /// <summary>
@@ -41,18 +41,16 @@ namespace LibraryManagementLibrary.Models
         /// MaxLength(80), MinLength(10) Required
         /// </summary>
         [Required(ErrorMessage = "{0} is required")]
-        [MaxLength(80), MinLength(10)]
+        [MinLength(10), MaxLength(80)]
         public string Author { get; set; }
 
         /// <summary>
         /// The ISBN of the book
-        /// MaxLength(13), MinLength(17) Required -- MUST BE BETWEEN 13 AND 17 CHARACTERS LONG
+        /// MinLength(10), MaxLength(13) Required -- MUST BE BETWEEN 10 AND 13 CHARACTERS LONG
         /// Follows no real format, but validation is based on a formula
-        /// ISBN-10 will have 3 dashes, and ISBN-13 will have 4 dashes
-        /// ISBN-10 will have 978 prepended in order for it to work
         /// </summary>
         [Required(ErrorMessage = "{0} is required")]
-        [MaxLength(13), MinLength(17)]
+        [MinLength(10), MaxLength(13)]
         public string ISBN { get; set; }
     }
 }

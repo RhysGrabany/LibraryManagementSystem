@@ -107,6 +107,18 @@ namespace LibraryManagementLibrary.DataAccess
             }
         }
 
+        /// <summary>
+        /// Method used to add a new book to the sql database
+        /// </summary>
+        /// <param name="book">Book to be added</param>
+        public void AddNewBook(Book book)
+        {
+            using (_db)
+            {
+                _db.Books.Add(book);
+            }
+        }
+
         #endregion
 
         #region Getting Information
@@ -236,7 +248,7 @@ namespace LibraryManagementLibrary.DataAccess
 
         #region Book Check
 
-        public bool IsBookStored(string title, string author)
+        public bool IsBookSaved(string title, string author)
         {
 
             return _db.Books
