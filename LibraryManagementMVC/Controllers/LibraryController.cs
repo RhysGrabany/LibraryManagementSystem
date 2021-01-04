@@ -39,7 +39,7 @@ namespace LibraryManagementMVC.Controllers
             }
 
 
-            return View("AddNewBook", vm);
+            return View("AddNewBook", new Book());
         }
 
     }

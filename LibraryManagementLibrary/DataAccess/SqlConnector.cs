@@ -116,6 +116,7 @@ namespace LibraryManagementLibrary.DataAccess
             using (_db)
             {
                 _db.Books.Add(book);
+                _db.SaveChanges();
             }
         }
 
