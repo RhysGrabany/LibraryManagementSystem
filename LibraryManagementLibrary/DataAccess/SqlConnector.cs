@@ -249,15 +249,13 @@ namespace LibraryManagementLibrary.DataAccess
 
         #region Book Check
 
-        public bool IsBookSaved(string title, string author)
+        public bool IsBookSaved(Book book)
         {
 
             return _db.Books
-                .Where(t => t.Title == title)
-                .Where(a => a.Author == author)
+                .Where(t => t.Title == book.Title)
+                .Where(a => a.Author == book.Author)
                 .Count() > 0;
-
-
         }
 
 

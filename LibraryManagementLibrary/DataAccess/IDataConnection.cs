@@ -112,7 +112,7 @@ namespace LibraryManagementLibrary.DataAccess
         /// <returns>True if the address has a relationship with the Person, False if not</returns>
         bool IsPersonAddressSaved(Person person, Address address);
 
-        bool IsBookSaved(string title, string author);
+        bool IsBookSaved(Book book);
 
         #endregion
 

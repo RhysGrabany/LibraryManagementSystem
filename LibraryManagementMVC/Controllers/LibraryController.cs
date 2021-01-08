@@ -1,5 +1,6 @@
 ﻿using LibraryManagementLibrary.DataAccess;
 using LibraryManagementLibrary.Models;
+using LibraryManagementMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -22,24 +23,30 @@ namespace LibraryManagementMVC.Controllers
 
         public ActionResult AddNewBook()
         {
-            return View(new Book());
+            return View(new BookInformationModel());
         }
 
         [HttpPost]
-        public IActionResult AddNewBook(Book vm)
+        public IActionResult AddNewBook(BookInformationModel vm)
         {
 
 
-            var author = vm.Author;
-            var title = vm.Title;       
+            var author = vm.Book.Author;
+            var title = vm.Book.Title;
 
             if(!_sql.IsBookSaved(title, author))
             {
-                _sql.AddNewBook(vm);
+                AddNewBookInfo(vm);
             }
 
 
             return View("AddNewBook", new Book());
+        }
+
+
+        public static void AddNewBookInfo(BookInformationModel vm)
+        {
+
         }
 
     }
