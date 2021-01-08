@@ -114,12 +114,5 @@ namespace LibraryManagementMVC.Controllers
             return View("PersonViewInfo", new PersonModel() { Person = person });
         }
 
-
-
-
-
-
-
-
     }
 }

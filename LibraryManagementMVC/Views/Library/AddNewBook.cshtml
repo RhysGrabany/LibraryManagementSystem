@@ -1,6 +1,6 @@
 ﻿
 @using LibraryManagementLibrary.Models
-@model Book
+@model BookInformationModel
 
 @{
 }
@@ -10,26 +10,34 @@
 
 
     <div class="form-group">
-        @Html.LabelFor(m => m.Title, new { @class = "control-label col-md-2" })
+        @Html.LabelFor(m => m.Book.Title, new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(m => m.Title)
-            @Html.ValidationMessageFor(m => m.Title)
+            @Html.EditorFor(m => m.Book.Title)
+            @Html.ValidationMessageFor(m => m.Book.Title)
         </div>
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(m => m.Author, new { @class = "control-label col-md-2" })
+        @Html.LabelFor(m => m.Book.Author, new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(m => m.Author)
-            @Html.ValidationMessageFor(m => m.Author)
+            @Html.EditorFor(m => m.Book.Author)
+            @Html.ValidationMessageFor(m => m.Book.Author)
         </div>
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(m => m.ISBN, new { @class = "control-label col-md-2" })
+        @Html.LabelFor(m => m.Book.ISBN, new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(m => m.ISBN)
-            @Html.ValidationMessageFor(m => m.ISBN)
+            @Html.EditorFor(m => m.Book.ISBN)
+            @Html.ValidationMessageFor(m => m.Book.ISBN)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Stock, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(m => m.Stock)
+            @Html.ValidationMessageFor(m => m.Stock)
         </div>
     </div>
 

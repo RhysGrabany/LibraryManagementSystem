@@ -38,7 +38,7 @@ namespace LibraryManagementLibrary.DataAccess
         /// <param name="address">The existing address being utilised</param>
         void AddExistingPersonToExistingAddress(Person person, Address address);
 
-        void AddNewBook(Book book);
+        void AddNewBook(Book Book, LibraryStock LibraryStock);
 
         #endregion
 
@@ -83,6 +83,12 @@ namespace LibraryManagementLibrary.DataAccess
         /// <param name="searchTerm">The string being searched in people</param>
         /// <returns>Returns a Task that contains the list of people</returns>
         Task<List<Person>> FindPeopleWithSearchTermAsync(string searchTerm);
+
+        #endregion
+
+        #region Library Info
+
+        Task<Library> GetLibraryModel(int? Id);
 
         #endregion
 

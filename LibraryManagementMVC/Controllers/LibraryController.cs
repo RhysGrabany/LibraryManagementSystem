@@ -27,26 +27,21 @@ namespace LibraryManagementMVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddNewBook(BookInformationModel vm)
+        public async Task<IActionResult> AddNewBook(BookInformationModel vm)
         {
-
-
-            var author = vm.Book.Author;
-            var title = vm.Book.Title;
-
-            if(!_sql.IsBookSaved(title, author))
+            // Checks if the book entry is present in the db, if false add book
+            if(!_sql.IsBookSaved(vm.Book))
             {
-                AddNewBookInfo(vm);
+                var LibraryStock = new LibraryStock();
+
+                LibraryStock.Library = await _sql.GetLibraryModel(vm.LibraryID);
+                LibraryStock.Stock = vm.Stock;
+
+                _sql.AddNewBook(vm.Book, LibraryStock);
             }
 
 
-            return View("AddNewBook", new Book());
-        }
-
-
-        public static void AddNewBookInfo(BookInformationModel vm)
-        {
-
+            return View("AddNewBook", new BookInformationModel());
         }
 
     }

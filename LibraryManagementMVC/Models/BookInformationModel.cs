@@ -12,8 +12,6 @@ namespace LibraryManagementMVC.Models
         public Book Book { get; set; }
         public int Stock { get; set; }
 
-        public LibraryStock LibraryStock { get; set; }
-
         public int LibraryID { get; set; } = 1;
     }
 }

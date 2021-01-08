@@ -111,14 +111,23 @@ namespace LibraryManagementLibrary.DataAccess
         /// Method used to add a new book to the sql database
         /// </summary>
         /// <param name="book">Book to be added</param>
-        public void AddNewBook(Book book)
+        public void AddNewBook(Book Book, LibraryStock LibraryStock)
         {
             using (_db)
             {
-                _db.Books.Add(book);
+                _db.Books.Add(Book);
+                _db.SaveChanges();
+
+                int bookId = Book.BookID;
+
+                LibraryStock.Book = Book;
+
+                _db.LibraryStocks.Add(LibraryStock);
+
                 _db.SaveChanges();
             }
         }
+
 
         #endregion
 
@@ -194,6 +203,19 @@ namespace LibraryManagementLibrary.DataAccess
 
         #endregion
 
+        #region Library Info
+
+        public async Task<Library> GetLibraryModel(int? Id)
+        {
+            return await _db.Library
+                .Where(i => i.LibraryID == Id)
+                .FirstOrDefaultAsync();
+        }
+
+
+
+        #endregion
+
         #region Person/Address Checks
 
         /// <summary>
@@ -249,9 +271,16 @@ namespace LibraryManagementLibrary.DataAccess
 
         #region Book Check
 
+        /// <summary>
+        /// Checks db for an entry relating to the book trying to be stored
+        /// </summary>
+        /// <param name="book">The book being searched</param>
+        /// <returns>True on entry being present, false otherwise</returns>
         public bool IsBookSaved(Book book)
         {
-
+            // Books usually have multiple ISBNs depending on the edition,
+            // so I'm not sure if searching this way would be better, but including a 
+            // different title for multiple editions can be a workaround
             return _db.Books
                 .Where(t => t.Title == book.Title)
                 .Where(a => a.Author == book.Author)
