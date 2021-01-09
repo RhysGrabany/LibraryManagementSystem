@@ -212,7 +212,20 @@ namespace LibraryManagementLibrary.DataAccess
                 .FirstOrDefaultAsync();
         }
 
+        public async Task<List<Book>> GetBooksBySearchTerm(string searchTerm)
+        {
+            return await _db.Books.Where(b => b.Title == searchTerm
+            || b.Author == searchTerm
+            || b.ISBN == searchTerm).ToListAsync();
+        }
 
+        public int GetBookStockById(int? Id)
+        {
+            return _db.LibraryStocks
+                .Where(i => i.Book.BookID == Id)
+                .Select(s => s.Stock)
+                .FirstOrDefault();
+        }
 
         #endregion
 

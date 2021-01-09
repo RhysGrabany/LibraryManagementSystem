@@ -158,3 +158,5 @@ D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\obj\Debug\netcore
 D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\obj\Debug\netcoreapp3.1\Razor\Views\Person\Components\PersonAddressInfoListedPartial.cshtml.g.cs
 D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\obj\Debug\netcoreapp3.1\Razor\Views\Person\Components\PersonCheckedBooksListedPartial.cshtml.g.cs
 D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\obj\Debug\netcoreapp3.1\Razor\Views\Library\AddNewBook.cshtml.g.cs
+D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\obj\Debug\netcoreapp3.1\Razor\Views\Library\Components\SearchBookResultsPartial.cshtml.g.cs
+D:\VisualStudioProjects\LibraryManagement\LibraryManagementMVC\obj\Debug\netcoreapp3.1\Razor\Views\Library\SearchBooks.cshtml.g.cs

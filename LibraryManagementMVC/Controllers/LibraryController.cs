@@ -44,5 +44,32 @@ namespace LibraryManagementMVC.Controllers
             return View("AddNewBook", new BookInformationModel());
         }
 
+
+        public ActionResult SearchBooks()
+        {
+            return View(new SearchBookModel());
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> SearchBooks(SearchBookModel vm)
+        {
+
+            var searchTerm = vm.SearchTerm;
+
+            var books = await _sql.GetBooksBySearchTerm(searchTerm);
+
+            var bookResults = new List<BookResultModel>();
+            foreach (var book in books)
+            {
+                bookResults.Add(
+                    new BookResultModel() 
+                    { Book = book,
+                        Stock = _sql.GetBookStockById(book.BookID) });
+            }
+
+            
+            return View(vm);
+        }
+
     }
 }

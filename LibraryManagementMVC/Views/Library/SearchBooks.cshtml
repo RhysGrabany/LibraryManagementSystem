@@ -1,0 +1,50 @@
+﻿@model SearchBookModel
+
+@{
+
+    ViewData["Title"] = "Search Books";
+
+    var SearchedPerson = Model.BookResults;
+
+}
+
+
+<div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.TextBoxFor(model => model.SearchTerm)
+        <input type="submit" value="Search" class="btn btn-default" />
+    }
+
+    @{
+        if (Model.BookResults != null)
+        {
+            @using (Html.BeginForm())
+            {
+                <table class="table">
+
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Book.Title)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Book.Author)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Book.ISBN)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.LibraryStock.Stock)
+                        </th>
+                    </tr>
+
+                    @foreach (var book in Model.BookResults)
+                    {
+                        @await Html.PartialAsync("Components/SearchBookResultsPartial", book);
+                    }
+                </table>
+            }
+        }
+    }
+</div>

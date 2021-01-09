@@ -90,6 +90,10 @@ namespace LibraryManagementLibrary.DataAccess
 
         Task<Library> GetLibraryModel(int? Id);
 
+        Task<List<Book>> GetBooksBySearchTerm(string searchTerm);
+
+        int GetBookStockById(int? Id);
+
         #endregion
 
         #endregion

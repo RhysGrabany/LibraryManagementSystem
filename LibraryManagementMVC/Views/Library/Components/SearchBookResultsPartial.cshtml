@@ -1,0 +1,30 @@
+﻿
+
+
+@using LibraryManagementLibrary.Models
+
+@model BookResultModel
+
+@{
+
+    var id = Model.Book.BookID;
+
+}
+
+<tr>
+    <td>
+        @Html.DisplayFor(m => m.Book.BookID)
+    </td>
+    <td>
+        @Html.DisplayFor(m => m.Book.Author)
+    </td>
+    <td>
+        @Html.DisplayFor(m => m.Book.ISBN)
+    </td>
+    <td>
+        @Html.DisplayFor(m => m.Stock)
+    </td>
+    @*<td>
+        <a asp-controller="Library" asp-action="PersonViewInfo" asp-route-id="@id" class="btn btn-default">View</a>
+    </td>*@
+</tr>
