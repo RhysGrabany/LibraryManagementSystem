@@ -53,21 +53,25 @@ namespace LibraryManagementMVC.Controllers
         [HttpPost]
         public async Task<ActionResult> SearchBooks(SearchBookModel vm)
         {
-
+            // save the search term like this cause it's more readable
             var searchTerm = vm.SearchTerm;
 
+            // Get all books that match the search term
             var books = await _sql.GetBooksBySearchTerm(searchTerm);
 
+            // Put the books and stock level into a model, then add it to the list
             var bookResults = new List<BookResultModel>();
             foreach (var book in books)
             {
+                // This looks neater to me compared to doing the same thing but with four lines extra
                 bookResults.Add(
                     new BookResultModel() 
-                    { Book = book,
-                        Stock = _sql.GetBookStockById(book.BookID) });
+                    { 
+                        Book = book,
+                        Stock = _sql.GetBookStockById(book.BookID) 
+                    });
             }
 
-            
             return View(vm);
         }
 

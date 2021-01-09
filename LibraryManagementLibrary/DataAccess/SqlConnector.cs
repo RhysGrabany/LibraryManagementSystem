@@ -205,6 +205,11 @@ namespace LibraryManagementLibrary.DataAccess
 
         #region Library Info
 
+        /// <summary>
+        /// Used to get a specific library model using an id
+        /// </summary>
+        /// <param name="Id">Id of the library model being used</param>
+        /// <returns>Returns the library model</returns>
         public async Task<Library> GetLibraryModel(int? Id)
         {
             return await _db.Library
@@ -212,13 +217,24 @@ namespace LibraryManagementLibrary.DataAccess
                 .FirstOrDefaultAsync();
         }
 
+        /// <summary>
+        /// Receives a list of books that match a substring given by a user
+        /// </summary>
+        /// <param name="searchTerm">The search term being used</param>
+        /// <returns>List of books matching a search term</returns>
         public async Task<List<Book>> GetBooksBySearchTerm(string searchTerm)
         {
+            // This currently doesn't search substrings, so it needs to be exact 
             return await _db.Books.Where(b => b.Title == searchTerm
             || b.Author == searchTerm
             || b.ISBN == searchTerm).ToListAsync();
         }
 
+        /// <summary>
+        /// Gets the current stock level of a book using their BookId
+        /// </summary>
+        /// <param name="Id">The book id being searched</param>
+        /// <returns>Int level of stock</returns>
         public int GetBookStockById(int? Id)
         {
             return _db.LibraryStocks
